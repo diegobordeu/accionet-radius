@@ -21,6 +21,7 @@ const placeRouter = require('./server/routes/place');
 const placeApi = require('./server/routes/placeAPI');
 const subscriptionRouter = require('./server/routes/subscription');
 const subscriptionApi = require('./server/routes/subscriptionAPI');
+const index = require('./server/routes/index');
 
 const passport = require('passport');
 const session = require('express-session');
@@ -53,6 +54,7 @@ app.post('/login', passport.authenticate('local-login', {
 
 // app.use('/', indexRouter);
 app.use('/', usersRouter);
+app.use('/', index);
 app.use('/api', usersRouterApi);
 app.use('/session', sessionRouter);
 app.use('/status', statusRouter);
