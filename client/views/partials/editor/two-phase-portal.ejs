@@ -1,0 +1,120 @@
+<div class="row page-wrapper-alert alert alert-warning alert-dismissable">
+  <strong>Atenci&oacute;n:</strong>
+  El despliegue del portal es tentativo y va a depender del dispositivo
+  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+</div>
+
+<div id="mobilePortraitRow" class="row" ng-controller="editorTwoPhasePController">
+  <div id="hotspotSection" class="col-sm-6" >
+    <div id='borderAndHotspotContainer'>
+      <img id="mobile-border" class="screen-border" src="/assets/images/phone-white.png" height="633px" width="320px" alt='mobile border'/>
+      <div class="screen" id="hotspotContainer_2"></div>
+    </div>
+  </div>
+
+  <div id="attrChangeSection" class="col-sm-6">
+    <br/>
+    <br/>
+    <div class="form-group row">
+      <label class="col-sm-2 form-control-label">Idioma </label>
+      <div class="col-sm-10">
+        <select ng-model="current_hotspot.values['LANGUAGE']" id="place" class="form-control select2" ui-options="{theme: 'bootstrap'}" ng-change="recompile()" required>
+          <option value="ES">Espa&ntilde;ol</option>
+          <option value="PT">Portugues</option> <!-- FIXME -->
+          <option value="EN">English</option>
+        </select>
+      </div>
+    </div>
+    <hr/>
+    <div class="form-group row">
+      <label class="col-sm-2 form-control-label">Imagen superior</label>
+      <div class="col-sm-10">
+        <input type="file" class="form-control file-upload" data-key="BANNER-PATH" ng-click="fileChanged('BANNER-PATH')" id="TWO-PHASE-PORTAL-BANNER-PATH"/>
+      </div>
+    </div>
+    <hr/>
+    <div class="form-group row">
+      <label class="col-sm-2 form-control-label">Imagen</label>
+      <div class="col-sm-10">
+        <input type="file" class="form-control file-upload" data-key="IMAGE-PATH" ng-click="fileChanged('IMAGE-PATH')" id="TWO-PHASE-PORTAL-IMAGE-PATH"/>
+      </div>
+    </div>
+    <div ng-if="current_hotspot.values['LANGUAGE'] == 'ES'" class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Texto principal (ES)</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="2" ng-model="current_hotspot.values['MAIN-TEXT-ES']" ng-change="recompile()"></textarea>
+      </div>
+    </div>
+    <div ng-if="current_hotspot.values['LANGUAGE'] == 'PT'" class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Texto principal (PT)</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="2" ng-model="current_hotspot.values['MAIN-TEXT-PT']" ng-change="recompile()"></textarea>
+      </div>
+    </div>
+    <div ng-if="current_hotspot.values['LANGUAGE'] == 'EN'" class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Texto principal (EN)</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="2" ng-model="current_hotspot.values['MAIN-TEXT-EN']" ng-change="recompile()"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Color principal</label>
+      <div class="col-sm-10 input-group colorpicker-component">
+        <input type="text" ng-model="current_hotspot.values['MAIN-TEXT-COLOR']" class="form-control" ng-change="recompile()"/>
+        <span class="input-group-addon">
+          <i></i>
+        </span>
+      </div>
+    </div>
+    <hr/>
+
+    <div ng-if="current_hotspot.values['LANGUAGE'] == 'ES'" class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Bajada (ES)</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="2" ng-model="current_hotspot.values['SECOND-TEXT-ES']" ng-change="recompile()"></textarea>
+      </div>
+    </div>
+    <div ng-if="current_hotspot.values['LANGUAGE'] == 'EN'" class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Bajada (EN)</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="2" ng-model="current_hotspot.values['SECOND-TEXT-EN']" ng-change="recompile()"></textarea>
+      </div>
+    </div>
+    <div ng-if="current_hotspot.values['LANGUAGE'] == 'PT'" class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Bajada (PT)</label>
+      <div class="col-sm-10">
+        <textarea class="form-control" rows="2" ng-model="current_hotspot.values['SECOND-TEXT-PT']" ng-change="recompile()"></textarea>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Color bajada</label>
+      <div class="col-sm-10 input-group colorpicker-component">
+        <input type="text" ng-model="current_hotspot.values['SECOND-TEXT-COLOR']" class="form-control" ng-change="recompile()"/>
+        <span class="input-group-addon">
+          <i></i>
+        </span>
+      </div>
+    </div>
+    <hr/>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Color del bot&oacute;n</label>
+      <div class="col-sm-10 input-group colorpicker-component">
+        <input type="text" ng-model="current_hotspot.values['BUTTON-COLOR']" class="form-control" ng-change="recompile()"/>
+        <span class="input-group-addon">
+          <i></i>
+        </span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 form-control-label">Color del texto del bot&oacute;n</label>
+      <div class="col-sm-10 input-group colorpicker-component">
+        <input type="text" ng-model="current_hotspot.values['BUTTON-TEXT-COLOR']" class="form-control" ng-change="recompile()"/>
+        <span class="input-group-addon">
+          <i></i>
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>

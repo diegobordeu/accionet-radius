@@ -1,0 +1,172 @@
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/dashboard">
+      <i class="fa fa-wifi fa-fw"></i>
+      Accionet</a>
+  </div>
+  <!-- /.navbar-header -->
+
+  <ul class="nav navbar-top-links navbar-right">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-envelope fa-fw"></i>
+        <i class="fa fa-caret-down"></i>
+      </a>
+    </li>
+    <!-- /.dropdown -->
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-tasks fa-fw"></i>
+        <i class="fa fa-caret-down"></i>
+      </a>
+    </li>
+    <!-- /.dropdown -->
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-bell fa-fw"></i>
+        <i class="fa fa-caret-down"></i>
+      </a>
+    </li>
+    <!-- /.dropdown -->
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-user fa-fw"></i>
+        <i class="fa fa-caret-down"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-user">
+        <li>
+          <a href="/profile">
+            <i class="fa fa-user fa-fw"></i>
+            Perfil</a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-gear fa-fw"></i>
+            Settings</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="/logout">
+            <i class="fa fa-sign-out fa-fw"></i>
+            Salir</a>
+        </li>
+      </ul>
+      <!-- /.dropdown-user -->
+    </li>
+    <!-- /.dropdown -->
+  </ul>
+  <!-- /.navbar-top-links -->
+
+  <div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+      <ul class="nav" id="side-menu">
+        <li class="sidebar-search">
+          <div class="input-group custom-search-form">
+            <input type="text" class="form-control" placeholder="Search...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </span>
+          </div>
+          <!-- /input-group -->
+        </li>
+        <li>
+          <a href="/dashboard">
+            <i class="fa fa-wifi fa-fw"></i>
+            Accionet</a>
+        </li>
+        <% if(user.is_admin) { %>
+          <li>
+            <a href="#">
+              <i class="fa fa-users fa-fw"></i>
+              Usuarios<span class="fa arrow"></span>
+            </a>
+            <ul class="nav nav-second-level">
+              <li>
+                <a href="/users">índice</a>
+              </li>
+              <li>
+                <a href="/users/disabled">Usuarios desactivados</a>
+              </li>
+              <li>
+                <a href="/users/new">nuevo usuario</a>
+              </li>
+            </ul>
+            <!-- /.nav-second-level -->
+          </li>
+        <% } %>
+        <li>
+          <a href="#">
+            <i class="fa fa-university fa-fw"></i>
+            Lugares<span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/places">índice</a>
+            </li>
+            <%if(user.is_admin) {%>
+              <li>
+                <a href="/places/disabled">Lugares desactivados</a>
+              </li>
+              <li>
+                <a href="/places/new">nuevo lugar</a>
+              </li>
+            <% } %>
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-question-circle fa-fw"></i>
+            Encuestas<span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/surveys">índice</a>
+            </li>
+            <%if(user.is_admin) {%>
+              <li>
+                <a href="/surveys/disabled">Encuestas Desactivadas</a>
+              </li>
+              <li>
+                <a href="/surveys/new">Crear Nueva Encuesta</a>
+              </li>
+            <% }%>
+
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-tablet fa-fw"></i>
+            Portales<span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level">
+            <li>
+              <a href="/hotspots/">índice</a>
+            </li>
+            <%if(user.is_admin) {%>
+              <li>
+                <a href="/hotspots/disabled">Portales Desactivadas</a>
+              </li>
+              <li>
+                <a href="/hotspots/new">Crear Nuevo Portal</a>
+              </li>
+            <% }%>
+
+          </ul>
+          <!-- /.nav-second-level -->
+        </li>
+      </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+  </div>
+  <!-- /.navbar-static-side -->
+</nav>

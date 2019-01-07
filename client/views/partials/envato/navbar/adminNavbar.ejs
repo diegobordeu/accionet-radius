@@ -1,0 +1,268 @@
+<!-- aside -->
+<div id="aside" class="app-aside modal fade md nav-expand">
+  <div class="left navside indigo-900 dk" layout="column">
+    <div class="navbar navbar-md no-radius">
+      <!-- brand -->
+      <a class="navbar-brand">
+        <div ui-include="'/vendor/envato/views/blocks/navbar.brand.html'"></div>
+      </a>
+      <!-- / brand -->
+    </div>
+    <div flex class="hide-scroll">
+      <nav class="scroll nav-active-primary">
+
+          <ul class="nav" ui-nav>
+            <li class="nav-header hidden-folded">
+              <small class="text-muted">Principal</small>
+            </li>
+
+            <li>
+              <a href="/dashboard" >
+                <span class="nav-icon">
+                  <i class="material-icons">&#xe3fc;
+                    <span ui-include="'/vendor/envato/assets/images/i_0.svg'"></span>
+                  </i>
+                </span>
+                <span class="nav-text">Dashboard</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="https://accionet.cl" target="_blank" >
+                <span class="nav-icon">
+                  <i class="material-icons">&#xe5c3;
+                    <span ui-include="'/vendor/envato/assets/images/i_1.svg'"></span>
+                  </i>
+                </span>
+                <span class="nav-text">Accionet</span>
+              </a>
+            </li>
+
+            <!-- <li>
+              <a href="/places/squares" >
+                <span class="nav-icon">
+                  <i class="material-icons">&#xe8d2;
+                    <span ui-include="'/vendor/envato/assets/images/i_3.svg'"></span>
+                  </i>
+                </span>
+                <span class="nav-text"> Redes</span>
+              </a>
+            </li>-->
+
+            <li>
+              <a>
+                <span class="nav-caret">
+                  <i class="fa fa-caret-down"></i>
+                </span>
+                <span class="nav-icon">
+                  <i class="fa fa-user"></i>
+                </span>
+                <span class="nav-text">Usuarios</span>
+              </a>
+              <ul class="nav-sub nav-mega nav-mega-3">
+                <li>
+                  <a href="/users" >
+                    <span class="nav-text">&Iacute;ndice</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="users/disabled" >
+                    <span class="nav-text">Desactivados</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/users/new" >
+                    <span class="nav-text">Crear nuevo <b class="label label-sm info">new</b></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+
+
+            <li class="nav-header hidden-folded">
+              <small class="text-muted">Mis cosas</small>
+            </li>
+
+            <li>
+              <a>
+                <span class="nav-caret">
+                  <i class="fa fa-caret-down"></i>
+                </span>
+                <span class="nav-icon">
+                  <i class="fa fa-bullhorn" aria-hidden="true"></i>
+                </span>
+                <span class="nav-text">Anuncios</span>
+              </a>
+              <ul class="nav-sub nav-mega nav-mega-3">
+                <li>
+                  <a href="/sponsorship/" >
+                    <span class="nav-text">&Iacute;ndice</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/leads/" >
+                    <span class="nav-text">Leads</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/bidding/" >
+                    <span class="nav-text">Subasta</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/sponsorship/disabled" >
+                    <span class="nav-text">Pausados</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/sponsorship/new" >
+                    <span class="nav-text">Crear nuevo <b class="label label-sm info">new</b></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a>
+                <span class="nav-caret">
+                  <i class="fa fa-caret-down"></i>
+                </span>
+                <span class="nav-icon">
+                    <i class="fa fa-users"></i>
+                </span>
+                <span class="nav-text">Audiencias</span>
+              </a>
+              <ul class="nav-sub nav-mega nav-mega-3">
+                <li>
+                  <a href="/rmkt" >
+                    <span class="nav-text">&Iacute;ndice</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/rmkt/disabled" >
+                    <span class="nav-text">Desactivados</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/rmkt/new" >
+                    <span class="nav-text">Crear nuevo <b class="label label-sm info">new</b></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a>
+                <span class="nav-caret">
+                  <i class="fa fa-caret-down"></i>
+                </span>
+                <span class="nav-icon">
+                  <i class="fa fa-wifi"></i>
+                </span>
+                <span class="nav-text">Redes</span>
+              </a>
+              <ul class="nav-sub nav-mega nav-mega-3">
+                <li>
+                  <a href="/places" >
+                    <span class="nav-text">&Iacute;ndice</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/places/disabled" >
+                    <span class="nav-text">Desactivados</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/places/new" >
+                    <span class="nav-text">Crear nuevo <b class="label label-sm info">new</b></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a>
+                <span class="nav-caret">
+                  <i class="fa fa-caret-down"></i>
+                </span>
+                <span class="nav-icon">
+                  <i class="material-icons">&#xe429;
+                    <span ui-include="'/vendor/envato/assets/images/i_4.svg'"></span>
+                  </i>
+                </span>
+                <span class="nav-text">Perfilamiento</span>
+              </a>
+              <ul class="nav-sub nav-mega nav-mega-3">
+                <li>
+                  <a href="/gather/" >
+                    <span class="nav-text">&Iacute;ndice</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/gather/disabled" >
+                    <span class="nav-text">Desactivadas</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/gather/new" >
+                    <span class="nav-text">Crear nueva pregunta <b class="label label-sm info">new</b></span>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="hidden-folded" >
+              <a href="/query">
+                <span class="nav-icon">
+                  <i class="fa fa-search"></i>
+                </span>
+                <span class="nav-text">Data Analytics</span>
+              </a>
+            </li>
+            <!-- <li>
+              <a>
+                <span class="nav-caret">
+                  <i class="fa fa-caret-down"></i>
+                </span>
+                <span class="nav-icon">
+                  <i class="material-icons">&#xe429;
+                    <span ui-include="'/vendor/envato/assets/images/i_4.svg'"></span>
+                  </i>
+                </span>
+                <span class="nav-text">Encuestas</span>
+              </a>
+              <ul class="nav-sub nav-mega nav-mega-3">
+                <li>
+                  <a href="/surveys/" >
+                    <span class="nav-text">&Iacute;ndice</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/surveys/disabled" >
+                    <span class="nav-text">Desactivados</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/surveys/new" >
+                    <span class="nav-text">Crear nuevo <b class="label label-sm info">new</b></span>
+                  </a>
+                </li>
+              </ul>
+            </li> -->
+
+            <li class="nav-header hidden-folded">
+              <small class="text-muted">Centro de ayuda</small>
+            </li>
+
+            <li class="hidden-folded" >
+              <a href="https://accionet.cl/contacto/" target="_blank">
+                <span class="nav-text">Contacto</span>
+              </a>
+            </li>
+
+          </ul>
+      </nav>
+    </div>
+    <div flex-no-shrink>
+      <div ui-include="'/vendor/envato/views/blocks/aside.bottom.0.html'"></div>
+    </div>
+  </div>
+</div>
+<!-- / aside -->

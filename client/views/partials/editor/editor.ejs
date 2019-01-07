@@ -1,0 +1,65 @@
+<div ng-controller='editorController' id='<%= event %>'>
+  <div class="row page-wrapper-alert alert alert-warning alert-dismissable" ng-init="initialize('<%= event %>')">
+    <strong>Atenci&oacute;n:</strong>
+    El despliegue del portal es tentativo y va a depender del dispositivo
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+  </div>
+
+  <div id="mobilePortraitRow" class="row">
+    <div id="hotspotSection" class="col-sm-6">
+      <div id='borderAndHotspotContainer'>
+        <img id="mobile-border" class="screen-border" src="/assets/images/phone-white.png" height="633px" width="320px" alt='mobile border'/>
+        <div class="screen" id="iframeContainer"></div>
+      </div>
+    </div>
+    <div id="attrChangeSection" class="col-sm-6">
+      <br/>
+      <br/>
+      <div class="form-group row">
+        <label class="col-sm-2 form-control-label">Idioma
+        </label>
+        <div class="col-sm-10">
+          <select ng-model="values['LANGUAGE']" class="form-control select2" ui-options="{theme: 'bootstrap'}" ng-change="recompile()" required>
+            <option value="ES">Espa&ntilde;ol</option>
+            <option value="PT">Portugues</option>
+            <option value="EN">English</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group row" ng-repeat="entry in modifiablesKeys">
+        <label ng-if="entry.type !== 'text'" class="col-sm-2 form-control-label">{{entry.label}}</label>
+        <label ng-if="entry.type == 'text'" class="col-sm-2 form-control-label">{{entry.label}}
+          ({{values['LANGUAGE']}})</label>
+        <div class="col-sm-10" ng-if="entry.type == 'file'">
+          <input type="file" class="form-control file-upload {{entry.key}}" data-key="{{entry.key}}" ng-click="fileChanged(entry.key)">
+        </div>
+        <div class="col-sm-10" ng-if="entry.type == 'text'">
+          <textarea class="form-control" rows="2" ng-model="values[entry.key + values['LANGUAGE']]" ng-change="recompile()"></textarea>
+        </div>
+        <div class="col-sm-10 input-group colorpicker-component" ng-if="entry.type == 'color'">
+          <input type="text" ng-model="values[entry.key]" class="form-control" ng-change="recompile()"/>
+          <span class="input-group-addon">
+            <i></i>
+          </span>
+        </div>
+        <div class="col-sm-10 input-group" ng-if="entry.type == 'size'" style="width: 100%">
+          <span class="input-group-addon" ng-click="recompileSize(entry.key, 'down')">
+            <i class="fa fa-caret-down" aria-hidden="true"></i>
+          </span>
+          <input type="text" value="{{values[entry.key]}}" class="form-control" readonly/>
+          <span class="input-group-addon" ng-click="recompileSize(entry.key, 'up')">
+            <i class="fa fa-caret-up" aria-hidden="true"></i>
+          </span>
+        </div>
+        <div class="col-sm-10 input-group" ng-if="entry.type == 'webpage'" style="width: 100%">
+          <span class="input-group-addon">
+            https://
+          </span>
+          <input type="text" ng-init="webPageNoProtocol(entry.key, values[entry.key])" ng-model="webpage[entry.key]" ng-change="changeWebPage(entry.key)" class="form-control"/>
+        </div>
+        <hr/>
+      </div>
+    </div>
+  </div>
+</div>
