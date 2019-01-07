@@ -20,7 +20,7 @@ server.on('message', (msg, rinfo) => {
     if (process.env.NODE_ENV === 'test') {
       testRecord.push(err);
     }
-    // console.log(err);
+    console.log(err, 'errorrrrrrrrrrrrrrrrrrrrrrr');
   });
 });
 
@@ -32,11 +32,11 @@ const processPacket = async (msg, rinfo) => {
   if (packet.code === 'Access-Request') {
     const auth = await checkAuth(username);
     await sendAuth(auth, packet, rinfo);
-    // console.log(`${packet.code} of user ${username}`);
+    console.log(`${packet.code} of user ${username}`);
   }
   if (packet.code === 'Accounting-Request') {
     await sendAccountingResponde(packet, rinfo);
-    // console.log(`${packet.code} Acct-Status-Type: ${packet.attributes['Acct-Status-Type']}user: ${username}`);
+    console.log(`${packet.code} Acct-Status-Type: ${packet.attributes['Acct-Status-Type']}user: ${username}`);
   }
 };
 
