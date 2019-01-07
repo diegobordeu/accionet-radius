@@ -3,8 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const monitor = require('./server/models/monitor');
-const isLoggedIn = require('./server/passport/passportService');
+// const monitor = require('./server/models/monitor');
+// const isLoggedIn = require('./server/passport/passportService');
 const RadiusServer = require('./server/radius_server/mk-radius-server');
 
 const usersRouter = require('./server/routes/user');
