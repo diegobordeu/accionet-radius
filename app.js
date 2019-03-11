@@ -23,6 +23,8 @@ const subscriptionRouter = require('./server/routes/subscription');
 const subscriptionApi = require('./server/routes/subscriptionAPI');
 const index = require('./server/routes/index');
 
+const pingBackTest = require('./server/routes/pingBack');
+
 const passport = require('passport');
 const session = require('express-session');
 const flash = require('connect-flash');
@@ -68,6 +70,7 @@ app.use('/', placeRouter);
 app.use('/', placeApi);
 app.use('/', subscriptionRouter);
 app.use('/', subscriptionApi);
+app.use('/', pingBackTest);
 
 app.get('/login', (req, res) => {
   res.render(path.join(__dirname, 'client', 'views', 'login.ejs'), {
