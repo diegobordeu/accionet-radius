@@ -1,6 +1,6 @@
 function isLoggedIn(req, res, next) {
-  // if (req.isAuthenticated()) {
-  if (true) {
+  if (req.isAuthenticated()) {
+  // if (true) {
     return next();
   }
   logout(req, res);

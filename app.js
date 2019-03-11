@@ -9,20 +9,9 @@ const RadiusServer = require('./server/radius_server/mk-radius-server');
 
 const usersRouter = require('./server/routes/user');
 const usersRouterApi = require('./server/routes/userAPI');
-const sessionRouter = require('./server/routes/session');
-const statusRouter = require('./server/routes/status');
-const apiRouter = require('./server/routes/api');
-const networkDevicesRouterOld = require('./server/routes/networkDevicesOld');
-const mailRouter = require('./server/routes/mail');
-const mailRouterApi = require('./server/routes/mailAPI');
-const networkDeviceRouter = require('./server/routes/networkDevice');
-const networkDeviceApi = require('./server/routes/networkDeviceAPI');
-const placeRouter = require('./server/routes/place');
-const placeApi = require('./server/routes/placeAPI');
 const subscriptionRouter = require('./server/routes/subscription');
 const subscriptionApi = require('./server/routes/subscriptionAPI');
 const index = require('./server/routes/index');
-
 const pingBackTest = require('./server/routes/pingBack');
 
 const passport = require('passport');
@@ -49,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'client/public')));
 
 
 app.post('/login', passport.authenticate('local-login', {
-  successRedirect: '/front/network-device', // redirect to the secure profile section
+  successRedirect: '/', // redirect to the secure profile section
   failureRedirect: '/login', // redirect back to the signup page if there is an error
   failureFlash: true, // allow flash messages
 }));
@@ -57,17 +46,7 @@ app.post('/login', passport.authenticate('local-login', {
 // app.use('/', indexRouter);
 app.use('/', usersRouter);
 app.use('/', index);
-app.use('/api', usersRouterApi);
-app.use('/session', sessionRouter);
-app.use('/status', statusRouter);
-app.use('/api', apiRouter);
-app.use('/network_device', networkDevicesRouterOld);
-app.use('/', networkDeviceRouter);
-app.use('/', mailRouter);
-app.use('/', mailRouterApi);
-app.use('/', networkDeviceApi);
-app.use('/', placeRouter);
-app.use('/', placeApi);
+app.use('/', usersRouterApi);
 app.use('/', subscriptionRouter);
 app.use('/', subscriptionApi);
 app.use('/', pingBackTest);

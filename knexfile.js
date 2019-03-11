@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   test: {
     client: 'pg',
-    connection: 'postgres://localhost:5432/meeseeks_test',
+    connection: 'postgres://localhost:5432/gene_v_test',
     migrations: {
       directory: path.join(__dirname, '/db/migrations'),
     },
@@ -14,7 +14,7 @@ module.exports = {
   },
   development: {
     client: 'pg',
-    connection: 'postgres://localhost:5432/meeseeks',
+    connection: 'postgres://localhost:5432/gene_v',
     migrations: {
       directory: path.join(__dirname, '/db/migrations'),
     },
@@ -25,7 +25,7 @@ module.exports = {
   },
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL || 'postgres://localhost:5432/meeseeks',
+    connection: process.env.DATABASE_URL || 'postgres://localhost:5432/gene_v',
     migrations: {
       directory: path.join(__dirname, '/db/migrations'),
     },
@@ -36,7 +36,7 @@ module.exports = {
   },
   staging: {
     client: 'pg',
-    connection: process.env.DATABASE_URL || 'postgres://localhost:5432/meeseeks',
+    connection: process.env.DATABASE_URL || 'postgres://localhost:5432/gene_v',
     migrations: {
       directory: path.join(__dirname, '/db/migrations'),
     },

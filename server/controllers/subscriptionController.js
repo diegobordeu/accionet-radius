@@ -81,8 +81,7 @@ const create = (req, res) => {
   Subscription.save(req.body).then((results) => {
     const json = httpResponse.success('Elemento guardado exitosamente', 'data', results);
     json.data.links = HATEOAS.get(results);
-    // return res.status(200).send(json);
-    return res.redirect('/front/subscription');
+    return res.status(200).send(json);
   }).catch((error) => {
     const json = httpResponse.error(error.message, error.fullMessage);
     return res.status(error.code).send(json);
@@ -93,8 +92,7 @@ const update = (req, res) => {
   Subscription.update(req.params.id, req.body).then((results) => {
     const json = httpResponse.success('Elemento actualizado exitosamente', 'data', results);
     json.data.links = HATEOAS.get(results);
-    // return res.status(200).send(json);
-    return res.redirect('/front/subscription');
+    return res.status(200).send(json);
   }).catch(() => {
     // const json = httpResponse.error(error.message, error.fullMessage);
     return res.status(400).send('error: utilizaste el fromate de fecha correcto en el update?? "2019-01-04 16:22:41.106-03"');
